@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 置中主體 */
+      margin: 0;
+      padding: 20px;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      /* 為了讓按鈕絕對定位 */
+      overflow: hidden;
+      /* 隱藏超出可見區域的內容 */
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eee;
+      /* 背景顏色 */
+      height: 100%;
+      /* 使 slide 填滿 container */
+      font-size: 20px;
+      border: 1px solid #ccc;
+      /* 添加邊框以區分每個 slide */
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border-radius: 50%;
+      z-index: 10;
+      position: absolute;
+      /* 絕對定位 */
+    }
+
+    .swiper-button-prev {
+      left: 10px;
+      /* 調整左邊按鈕的位置 */
+      margin-left: 64px;
+      /* 設置左邊按鈕的邊距 */
+    }
+
+    .swiper-button-next {
+      right: 10px;
+      /* 調整右邊按鈕的位置 */
+      margin-right: 64px;
+      /* 設置右邊按鈕的邊距 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">內容 1</div>
+      <div class="swiper-slide">內容 2</div>
+      <div class="swiper-slide">內容 3</div>
+      <div class="swiper-slide">內容 4</div>
+      <div class="swiper-slide">內容 5</div>
+      <div class="swiper-slide">內容 6</div>
+      <div class="swiper-slide">內容 7</div>
+      <div class="swiper-slide">內容 8</div>
+      <div class="swiper-slide">內容 9</div>
+      <div class="swiper-slide">內容 10</div>
+    </div>
+
+    <!-- 左右按鈕 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const swiper = new Swiper(".swiper-container", {
+        slidesPerView: 4, // 一次顯示的 slide 數量
+        spaceBetween: 20, // slide 之間的間距
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        loop: true, // 循環
+      });
+    });
+  </script>
+</body>
+
+</html>
